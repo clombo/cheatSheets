@@ -47,12 +47,41 @@ There are 4 common types exchanges for RabbitMQ
 
 ### Direct
 
+#### Characteristics
+- Will route the message to a queue whose binding key matches the routing key of the message EXACTLY.
+- One queue can have multiple bindings to the same exchange with different binding keys.
+
 Direct Exchange Diagram:
 
 ![RabbitMQ Direct Exchange](https://github.com/clombo/cheatSheets/assets/11086072/99d745f7-6464-44cb-9329-4ea21c1d687d)
 
 
-#### Example Usage
+#### Example Implementation using MassTransit
+
+In this example we will be processing a delivery via bicycle, motorcycle, or car. The dilivery information (published message) will stay the same but the way it gets delivered is different and we will handle this with the correct routing/binding key to the necessary queue.
+
+There will be a 4th queue that will act as the event log that will bind to all 3 routing keys to it. This can be consumed by a service to build up the event log in a database.
+
+Message model
+
+`delivery.cs`
+```cs
+```
+
+Create queues and bindings
+
+`deleveryQueue.cs`
+```cs
+```
+
+`logQueue.cs`
+```cs
+```
+
+Create publisher
+Create consumer
+
+Publish and consume methods
 
 ### CLI Tool
 
