@@ -83,6 +83,14 @@ Create consumer
 
 Publish and consume methods
 
+### Fanout
+
+Fanout Exchange Diagram:
+
+![RabbitMQ Fanout Exchange](https://github.com/clombo/cheatSheets/assets/11086072/ec0d95b6-38b2-4c3e-8f8a-a57c4b26e54c)
+
+#### Example Usage
+
 ### CLI Tool
 
 ## Configure .NET application to use RabbitMQ with MassTransit
@@ -151,10 +159,6 @@ public static class Extenstions
 #### Adding a Queue
 
 
-
-
-### Fanout
-#### Example Usage
 ### Topic
 #### Example Usage
 ### Header
