@@ -41,6 +41,15 @@ There are 4 common types exchanges for RabbitMQ
 - Topic
 - Header
 
+### Direct
+
+Direct Exchange Diagram:
+
+![RabbitMQ Direct Exchange](https://github.com/clombo/cheatSheets/assets/11086072/99d745f7-6464-44cb-9329-4ea21c1d687d)
+
+
+#### Example Usage
+
 ### CLI Tool
 
 ####  Examples
@@ -114,8 +123,7 @@ public static class Extenstions
 
 
 
-### Direct
-#### Example Usage
+
 ### Fanout
 #### Example Usage
 ### Topic
