@@ -91,6 +91,15 @@ Fanout Exchange Diagram:
 
 #### Example Usage
 
+### Topic
+
+Topic Exchange Diagram:
+
+![RabbitMQ Topic Exchange](https://github.com/clombo/cheatSheets/assets/11086072/6489237a-f746-4256-a8d4-dddb48f577e4)
+
+
+#### Example Usage
+
 ### CLI Tool
 
 ## Configure .NET application to use RabbitMQ with MassTransit
@@ -159,8 +168,7 @@ public static class Extenstions
 #### Adding a Queue
 
 
-### Topic
-#### Example Usage
+
 ### Header
 #### Example Usage
 
