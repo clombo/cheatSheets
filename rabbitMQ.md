@@ -4,6 +4,10 @@
 
 RabbitMQ is a message broker that supports multiple messaging protocols.
 
+####  Examples
+
+All the code examples that follow will be in .NET using the `MassTransit` package.
+
 ## Docker image example
 
 ### Create from command line:
@@ -51,10 +55,6 @@ Direct Exchange Diagram:
 #### Example Usage
 
 ### CLI Tool
-
-####  Examples
-
-All the code examples that follow will be in .NET using the `MassTransit` package.
 
 ## Configure .NET application to use RabbitMQ with MassTransit
 
