@@ -1,14 +1,47 @@
-# Rabbit MQ Cheat Sheet .NET
+# Rabbit MQ Cheat Sheet .NET and others
 
 ## Introduction
 
 RabbitMQ is a message broker that supports multiple messaging protocols.
 
+## Docker image example
+
+### Create from command line:
+- 
+
+### Docker compose example:
+
+```yaml
+
+```
+
 ## Protocols
+
+### Types of protocols:
+
+- AMQP
+- STOMP
+- MQTT
 
 #### AMQP (Advanced Message Queuing Protocol)
 
 This is the most common used protocol used with applications.
+
+## Exchanges
+
+Exchanges has a binding and routing key that sends it to the necessary queues accordingly.
+Routing keys are sent by the publisher and the queue has the binding key.
+
+### Types
+
+There are 4 common types exchanges for RabbitMQ
+
+- Direct
+- Fanout
+- Topic
+- Header
+
+### CLI Tool
 
 ####  Examples
 
@@ -79,16 +112,7 @@ public static class Extenstions
 #### Adding a Publisher
 #### Adding a Queue
 
-## Exchanges
 
-### Types
-
-There are 4 common types exchanges for RabbitMQ
-
-- Direct
-- Fanout
-- Topic
-- Header
 
 ### Direct
 #### Example Usage
