@@ -8,15 +8,91 @@ RabbitMQ is a message broker that supports multiple messaging protocols.
 
 All the code examples that follow will be in .NET using the `MassTransit` package.
 
-## Docker image example
+Install the following packages on your project where you will be configuring your message bus (RabbitMQ):
+
+- `MassTransit.AspNetCore`
+- `MassTransit.Extensions.DependencyInjection`
+- `MassTransit.RabbitMQ`
+
+#### Configure MassTransit
+
+First we will need to add the necessary configuration values to your `appsettings.json` file. If you have multiple environments each using different instances add it to the correct `appsettings.{env}.json` file.
+
+```json
+
+"RabbitMQ": {
+    "HostAddress": "host address like DNS name or IP of RabbitMQ instance",
+    "Username": "Username to connect",
+    "Password": "Password to connect",
+    "ConnectionName": "Friendly name for connection"
+}
+
+```
+
+Create a new .cs file (This example it is `Extensions.cs`) in your project. Depending on your project you might need to install some additional packages on the project.
+
+We will be using .NET DI to configure RabbitMQ. we will be using a static `IServiceCollection` method:
+
+```cs
+
+public static class Extenstions
+{
+    public static IServiceCollection AddServiceBus(
+        this IServiceCollection services,IConfiguration configuration
+    )
+    {
+        services.AddMassTransit(x =>
+            {   
+                x.UsingRabbitMq((ctx, cfg) =>
+                    {
+                        cfg.Host(
+                            configuration["RabbitMQ:HostAddress"], 
+                            configuration["RabbitMQ:ConnectionName"], 
+                            c =>
+                            {
+                            c.Username(configuration["RabbitMQ:Username"]);
+                            c.Password(configuration["RabbitMQ:Password"]);
+                            }
+                        );                    
+                    }
+                );
+            }
+        );
+
+        return services;
+    }
+}
+
+```
+
+## RabbitMQ Docker image install
 
 ### Create from command line:
-- 
+- `docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 rabbitmq:management`
+
+This will also install a managment plugin as well. You can access it on `http://host-ip:15672` or `http://localhost:15672`. Default username and password `guest`/`guest`
+
+For more information see the [Docker Oficial Image Page](https://hub.docker.com/_/rabbitmq)
 
 ### Docker compose example:
 
 ```yaml
+version: '3'
 
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+networks:
+  default:
+    driver: bridge
 ```
 
 ## Protocols
@@ -106,62 +182,9 @@ Topic Exchange Diagram:
 
 ### Install
 
-Install the following packages on your project where you will be configuring your message bus (RabbitMQ):
 
-- `MassTransit.AspNetCore`
-- `MassTransit.Extensions.DependencyInjection`
-- `MassTransit.RabbitMQ`
 
-### Configure
 
-First we will need to add the necessary configuration values to your `appsettings.json` file. If you have multiple environments each using different instances add it to the correct `appsettings.{env}.json` file.
-
-```json
-
-"RabbitMQ": {
-    "HostAddress": "host address like DNS name or IP of RabbitMQ instance",
-    "Username": "Username to connect",
-    "Password": "Password to connect",
-    "ConnectionName": "Friendly name for connection"
-}
-
-```
-
-Create a new .cs file (This example it is `Extensions.cs`) in your project. Depending on your project you might need to install some additional packages on the project.
-
-We will be using .NET DI to configure RabbitMQ. we will be using a static `IServiceCollection` method:
-
-```cs
-
-public static class Extenstions
-{
-    public static IServiceCollection AddServiceBus(
-        this IServiceCollection services,IConfiguration configuration
-    )
-    {
-        services.AddMassTransit(x =>
-            {   
-                x.UsingRabbitMq((ctx, cfg) =>
-                    {
-                        cfg.Host(
-                            configuration["RabbitMQ:HostAddress"], 
-                            configuration["RabbitMQ:ConnectionName"], 
-                            c =>
-                            {
-                            c.Username(configuration["RabbitMQ:Username"]);
-                            c.Password(configuration["RabbitMQ:Password"]);
-                            }
-                        );                    
-                    }
-                );
-            }
-        );
-
-        return services;
-    }
-}
-
-```
 
 #### Adding a consumer
 #### Adding a Publisher
