@@ -14,6 +14,8 @@ Install the following packages on your project where you will be configuring you
 - `MassTransit.Extensions.DependencyInjection`
 - `MassTransit.RabbitMQ`
 
+> **_NOTE:_**  In message bus "speak" you have `publishers`, `subscribers`, and `queues`. Masstransit has different names for each namely `producers`, `consumers`, `endpoints`
+
 #### Configure MassTransit
 
 First we will need to add the necessary configuration values to your `appsettings.json` file. If you have multiple environments each using different instances add it to the correct `appsettings.{env}.json` file.
