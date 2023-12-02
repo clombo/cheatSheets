@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryService", "DeliveryService\DeliveryService.csproj", "{AE285E70-74B1-40C6-83D1-2F9125FF809C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{82A1F4F9-8AF2-45A0-B669-26153D2691A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE285E70-74B1-40C6-83D1-2F9125FF809C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE285E70-74B1-40C6-83D1-2F9125FF809C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE285E70-74B1-40C6-83D1-2F9125FF809C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE285E70-74B1-40C6-83D1-2F9125FF809C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A1F4F9-8AF2-45A0-B669-26153D2691A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A1F4F9-8AF2-45A0-B669-26153D2691A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A1F4F9-8AF2-45A0-B669-26153D2691A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A1F4F9-8AF2-45A0-B669-26153D2691A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

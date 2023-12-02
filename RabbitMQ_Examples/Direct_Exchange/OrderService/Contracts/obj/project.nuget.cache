@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ri0MePqTUB5KDmw1vbJReP7k9uhdgmykrX6nyCxGPxVQW+DXrlFilB+U7g4xLIZ9rfQzhzismQi4UTUxfa5mWw==",
+  "success": true,
+  "projectFilePath": "E:\\code\\cheatSheets\\RabbitMQ_Examples\\Direct_Exchange\\OrderService\\Contracts\\Contracts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Christo\\.nuget\\packages\\masstransit.abstractions\\8.1.2\\masstransit.abstractions.8.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

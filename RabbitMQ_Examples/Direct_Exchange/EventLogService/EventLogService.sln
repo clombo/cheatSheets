@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventLogService", "EventLogService\EventLogService.csproj", "{031BF2BF-8708-4167-9E1F-D4BDC70FE8A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{7AD0A71D-13FF-47A8-8254-0B6A6B5EF92A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{031BF2BF-8708-4167-9E1F-D4BDC70FE8A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{031BF2BF-8708-4167-9E1F-D4BDC70FE8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{031BF2BF-8708-4167-9E1F-D4BDC70FE8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{031BF2BF-8708-4167-9E1F-D4BDC70FE8A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AD0A71D-13FF-47A8-8254-0B6A6B5EF92A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AD0A71D-13FF-47A8-8254-0B6A6B5EF92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AD0A71D-13FF-47A8-8254-0B6A6B5EF92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AD0A71D-13FF-47A8-8254-0B6A6B5EF92A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

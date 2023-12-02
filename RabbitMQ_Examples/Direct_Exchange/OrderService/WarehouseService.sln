@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseService", "WarehouseService\WarehouseService.csproj", "{8EC26B38-98D8-4364-BAAE-4A9E88A08044}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{76C5591A-B99F-4A87-B96A-DB014A730463}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EC26B38-98D8-4364-BAAE-4A9E88A08044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC26B38-98D8-4364-BAAE-4A9E88A08044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC26B38-98D8-4364-BAAE-4A9E88A08044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC26B38-98D8-4364-BAAE-4A9E88A08044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C5591A-B99F-4A87-B96A-DB014A730463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C5591A-B99F-4A87-B96A-DB014A730463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C5591A-B99F-4A87-B96A-DB014A730463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C5591A-B99F-4A87-B96A-DB014A730463}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
