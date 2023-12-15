@@ -3,9 +3,9 @@ using MassTransit;
 
 namespace EventLogService.Bus.Consumers;
 
-public class EventLoggedConsumer : IConsumer<DeliveryRecord>
+public class EventLoggedConsumer : IConsumer<IDeliveryRecord>
 {
-    public async Task Consume(ConsumeContext<DeliveryRecord> context)
+    public async Task Consume(ConsumeContext<IDeliveryRecord> context)
     {
         try
         {

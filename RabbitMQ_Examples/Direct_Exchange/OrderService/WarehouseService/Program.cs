@@ -5,6 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 //Add Message bus
 builder.Services.AddBus(builder.Configuration);
 
+//Add mappings
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 // Add services to the container.
 
 builder.Services.AddControllers();

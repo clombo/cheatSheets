@@ -1,0 +1,7 @@
+# Portable Network Graphics
+*.png
+RabbitMQ Notes.txt
+RabbitMQ_Examples/Direct_Exchange/DeliveryService/Contracts/bin/*
+RabbitMQ_Examples/Direct_Exchange/DeliveryService/Contracts/obj/*
+RabbitMQ_Examples/Direct_Exchange/DeliveryService/DeliveryService/bin/*
+

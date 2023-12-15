@@ -3,9 +3,9 @@ using MassTransit;
 
 namespace DeliveryService.Bus.Consumers;
 
-public class ParcelBookedConsumer : IConsumer<DeliveryRecord>
+public class ParcelBookedConsumer : IConsumer<IDeliveryRecord>
 {
-    public async Task Consume(ConsumeContext<DeliveryRecord> context)
+    public async Task Consume(ConsumeContext<IDeliveryRecord> context)
     {
         try
         {
