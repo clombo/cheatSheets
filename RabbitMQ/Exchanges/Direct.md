@@ -1,4 +1,4 @@
-## [Back to Main](http://www.google.com)
+## [Back to Main]([http://www.google.com](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md))
 
 ## Direct Exchange
 
@@ -10,9 +10,9 @@ The [MassTransit Documentation](https://masstransit.io/documentation) will be re
 
 Only the producers/consumers and messages are covered.
 
-Example code can be found [HERE]()
+Example code can be found [HERE](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Code_Examples/Direct_Exchange)
 
-> **_NOTE:_**  Make sure you have a running instance of RabbitMQ. If you are using different login details update the username and password in AppSettings. See the [MassTransit Config page]() for more information.
+> **_NOTE:_**  Make sure you have a running instance of RabbitMQ. If you are using different login details update the username and password in AppSettings. See the [MassTransit Config page](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/MassTransit.md) for more information.
 
 ### Characteristics
 - Will route the message to a queue whose binding key matches the routing key of the message EXACTLY.
@@ -24,6 +24,8 @@ Example code can be found [HERE]()
 
 
 ### Example Implementation using MassTransit
+
+![Direct Exchange Example](https://github.com/clombo/cheatSheets/assets/11086072/5c3ad243-69ca-474e-b4bb-e1ee5e5a0606)
 
 In this example we will be processing a delivery via bicycle, motorcycle, or car. The dilivery information (published message) will stay the same but the way it gets delivered is different and we will handle this with the correct routing/binding key to the necessary queue.
 
@@ -450,9 +452,9 @@ public static class Extensions
 ```
 
 ### References
-- [MassTransit Documentation]()
+- [MassTransit Documentation](https://masstransit.io/documentation/concepts)
 - [RabbitMQ Exchanges,routing keys and bindings](https://www.cloudamqp.com/blog/part4-rabbitmq-for-beginners-exchanges-routing-keys-bindings.html?gad_source=1&gclid=Cj0KCQiAj_CrBhD-ARIsAIiMxT968bAT2q7IKHeMLJ-ttUXsa1pdhW39c7F7FqpXv_eNtLlzP5NbtSoaAofYEALw_wcB)
 - [RabbitMQ Direct Excahnge Explained](https://www.cloudamqp.com/blog/rabbitmq-direct-exchange-explained.html)
-- [Example Code]()
+- [Example Code](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Code_Examples/Direct_Exchange)
 
-## [Back to Main](http://www.google.com)
+## [Back to Main]([http://www.google.com](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)
