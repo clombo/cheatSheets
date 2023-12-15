@@ -1,4 +1,4 @@
-## [Back to Main]([http://www.google.com](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)
+## [Back to Main](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)
 
 ## Direct Exchange
 
