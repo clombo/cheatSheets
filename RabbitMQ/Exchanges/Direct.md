@@ -25,13 +25,13 @@ Example code can be found [HERE](https://github.com/clombo/cheatSheets/tree/main
 
 ### Example Implementation using MassTransit
 
-![Direct Exchange Example](https://github.com/clombo/cheatSheets/assets/11086072/5c3ad243-69ca-474e-b4bb-e1ee5e5a0606)
-
 In this example we will be processing a delivery via bicycle, motorcycle, or car. The dilivery information (published message) will stay the same but the way it gets delivered is different and we will handle this with the correct routing/binding key to the necessary queue.
 
 There will be a 4th queue that will act as the event log that will bind to all 3 routing keys to it. This can be consumed by a service to build up the event log in a database for example.
 
 #### Diagram of example implementation.
+
+![Direct Exchange Example](https://github.com/clombo/cheatSheets/assets/11086072/5c3ad243-69ca-474e-b4bb-e1ee5e5a0606)
 
 ### Message models/contracts
 
