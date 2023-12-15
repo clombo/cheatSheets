@@ -1,4 +1,4 @@
-## [Back to Main]([http://www.google.com](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md))
+## [Back to Main]([http://www.google.com](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)
 
 ## Direct Exchange
 
@@ -457,4 +457,4 @@ public static class Extensions
 - [RabbitMQ Direct Excahnge Explained](https://www.cloudamqp.com/blog/rabbitmq-direct-exchange-explained.html)
 - [Example Code](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Code_Examples/Direct_Exchange)
 
-## [Back to Main]([http://www.google.com](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)
+## [Back to Main](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)
