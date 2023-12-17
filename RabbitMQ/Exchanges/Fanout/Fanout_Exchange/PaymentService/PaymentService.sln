@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService.Grpc", "PaymentService.Grpc\PaymentService.Grpc.csproj", "{69CF647B-9CC2-447D-BB48-A1D5BE0B67C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bus", "Bus\Bus.csproj", "{B1D44CB4-9361-4F42-B92D-E344753DEB2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{7E60292C-3F4E-465A-B138-F7B0DA4099F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69CF647B-9CC2-447D-BB48-A1D5BE0B67C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69CF647B-9CC2-447D-BB48-A1D5BE0B67C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69CF647B-9CC2-447D-BB48-A1D5BE0B67C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69CF647B-9CC2-447D-BB48-A1D5BE0B67C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1D44CB4-9361-4F42-B92D-E344753DEB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1D44CB4-9361-4F42-B92D-E344753DEB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1D44CB4-9361-4F42-B92D-E344753DEB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1D44CB4-9361-4F42-B92D-E344753DEB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E60292C-3F4E-465A-B138-F7B0DA4099F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E60292C-3F4E-465A-B138-F7B0DA4099F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E60292C-3F4E-465A-B138-F7B0DA4099F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E60292C-3F4E-465A-B138-F7B0DA4099F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
