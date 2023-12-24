@@ -1,0 +1,206 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\OfficeService.Grpc\\OfficeService.Grpc.csproj": {}
+  },
+  "projects": {
+    "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Bus\\Bus.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Bus\\Bus.csproj",
+        "projectName": "Bus",
+        "projectPath": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Bus\\Bus.csproj",
+        "packagesPath": "C:\\Users\\Christo\\.nuget\\packages\\",
+        "outputPath": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Bus\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Christo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Contracts\\Contracts.csproj": {
+                "projectPath": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Contracts\\Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "MassTransit.AspNetCore": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            },
+            "MassTransit.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Contracts\\Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Contracts\\Contracts.csproj",
+        "projectName": "Contracts",
+        "projectPath": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Contracts\\Contracts.csproj",
+        "packagesPath": "C:\\Users\\Christo\\.nuget\\packages\\",
+        "outputPath": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Christo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\OfficeService.Grpc\\OfficeService.Grpc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\OfficeService.Grpc\\OfficeService.Grpc.csproj",
+        "projectName": "OfficeService.Grpc",
+        "projectPath": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\OfficeService.Grpc\\OfficeService.Grpc.csproj",
+        "packagesPath": "C:\\Users\\Christo\\.nuget\\packages\\",
+        "outputPath": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\OfficeService.Grpc\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Christo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Bus\\Bus.csproj": {
+                "projectPath": "E:\\code\\cheatSheets\\RabbitMQ\\Exchanges\\Topic\\Topic_Exchange\\OfficeService\\Bus\\Bus.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.49.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

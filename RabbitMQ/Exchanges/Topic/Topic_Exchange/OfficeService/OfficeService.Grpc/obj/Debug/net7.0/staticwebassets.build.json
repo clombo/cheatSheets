@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "r6TUd6064Wjtig4xYCBFKCDciYBfHz4UQpDfLGr56eo=",
+  "Source": "OfficeService.Grpc",
+  "BasePath": "_content/OfficeService.Grpc",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

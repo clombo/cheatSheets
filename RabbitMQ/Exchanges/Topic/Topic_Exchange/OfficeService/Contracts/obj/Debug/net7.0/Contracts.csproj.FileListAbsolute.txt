@@ -1,0 +1,11 @@
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\bin\Debug\net7.0\Contracts.deps.json
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\bin\Debug\net7.0\Contracts.dll
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\bin\Debug\net7.0\Contracts.pdb
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\obj\Debug\net7.0\Contracts.GeneratedMSBuildEditorConfig.editorconfig
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\obj\Debug\net7.0\Contracts.AssemblyInfoInputs.cache
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\obj\Debug\net7.0\Contracts.AssemblyInfo.cs
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\obj\Debug\net7.0\Contracts.csproj.CoreCompileInputs.cache
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\obj\Debug\net7.0\Contracts.dll
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\obj\Debug\net7.0\refint\Contracts.dll
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\obj\Debug\net7.0\Contracts.pdb
+E:\code\cheatSheets\RabbitMQ\Exchanges\Topic\Topic_Exchange\OfficeService\Contracts\obj\Debug\net7.0\ref\Contracts.dll

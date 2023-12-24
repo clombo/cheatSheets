@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "joxSErYB7r4tQyRNMtG1VURN5knbLhfl0KmD+6ZAru4=",
+  "Source": "StoreService.Grpc",
+  "BasePath": "_content/StoreService.Grpc",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgreementsEventLog.Grpc", "AgreementsEventLog.Grpc\AgreementsEventLog.Grpc.csproj", "{3338D236-395C-4377-BFC6-537DEDAE81A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bus", "Bus\Bus.csproj", "{D4551481-C238-4645-92AC-3C3367FA4DA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{343D1D3D-4C2A-4797-ACF4-9515AF5908D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3338D236-395C-4377-BFC6-537DEDAE81A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3338D236-395C-4377-BFC6-537DEDAE81A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3338D236-395C-4377-BFC6-537DEDAE81A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3338D236-395C-4377-BFC6-537DEDAE81A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4551481-C238-4645-92AC-3C3367FA4DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4551481-C238-4645-92AC-3C3367FA4DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4551481-C238-4645-92AC-3C3367FA4DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4551481-C238-4645-92AC-3C3367FA4DA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{343D1D3D-4C2A-4797-ACF4-9515AF5908D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343D1D3D-4C2A-4797-ACF4-9515AF5908D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343D1D3D-4C2A-4797-ACF4-9515AF5908D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{343D1D3D-4C2A-4797-ACF4-9515AF5908D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

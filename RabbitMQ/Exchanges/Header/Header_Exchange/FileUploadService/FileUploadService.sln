@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploadService.API", "FileUploadService.API\FileUploadService.API.csproj", "{5D3A3141-2B93-4908-B175-A2A662FCF146}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bus", "Bus\Bus.csproj", "{1E259595-1B4C-4487-9360-27BC59C97709}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{5F322B6D-2D58-41B4-887D-CB80C0717E00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D3A3141-2B93-4908-B175-A2A662FCF146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3A3141-2B93-4908-B175-A2A662FCF146}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3A3141-2B93-4908-B175-A2A662FCF146}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3A3141-2B93-4908-B175-A2A662FCF146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E259595-1B4C-4487-9360-27BC59C97709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E259595-1B4C-4487-9360-27BC59C97709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E259595-1B4C-4487-9360-27BC59C97709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E259595-1B4C-4487-9360-27BC59C97709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F322B6D-2D58-41B4-887D-CB80C0717E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F322B6D-2D58-41B4-887D-CB80C0717E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F322B6D-2D58-41B4-887D-CB80C0717E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F322B6D-2D58-41B4-887D-CB80C0717E00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
