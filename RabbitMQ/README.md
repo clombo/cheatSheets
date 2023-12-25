@@ -52,18 +52,80 @@ Some but not all components related to RabbitMQ. Some components are also not un
 
 - Connection
 - Channel
-- Virtual Hosts
 - Exchanges
-- Queues
-- Consumers
-- Publishers
+- Virtual Hosts
+- Streams
 
 ### Connection
+
+a Connection is as the name implies, a TCP connection to RabbitMQ.
+
 ### Channel
-### Virtual Hosts
+
+Some applications need multiple logical connections to the broker. However, it is undesirable to keep many TCP connections open at the same time because doing so consumes system resources and makes it more difficult to configure firewalls. AMQP 0-9-1 connections are multiplexed with `channels` that can be thought of as "lightweight connections that share a single TCP connection".
+
+For more see <a href="https://www.rabbitmq.com/channels.html" target="_blank">the RabbitMQ Docs.</a>
+
 ### Exchanges
-### Queues
+
+Exchanges are routing agents, defined by the virtual host within RabbitMQ. An exchange is resposible for routing the messages to different queues with the help of attributes, bindings, and routing keys.
+
+#### Types
+
+There are 4 common types exchanges for RabbitMQ but are not the only exchanges available. See the <a href="https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges" target="_blank">Exchange Section</a> for more.
+
+- <a href="https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Direct" target="_blank">Direct</a>
+- <a href="https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Fanout" target="_blank">Fanout</a>
+- <a href="https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Topic" target="_blank">Topic</a>
+- <a href="https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Header" target="_blank">Header</a>
+
+Click on any of the above links for more details on each exchange with examples.
+
+More information on Exchanges and components related to Exchanges like Consumers, Producers, Queues can be found 
+<a href="https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges" target="_blank">HERE.</a>
+
+> **_NOTE:_** Another exchange that is not covered as an example is the `Consistent Hashing Exchange`. This exchange is available through a plugin you install and is not available as a default.It is used to distribute messages across the queues possibly equily. This works similar to the worker queue but has some advantages where you can give one queue more messages than others instead of using a round robin approach.
+
+>It still uses a routing/binding key but is a numerical value. This value determines how many messages are likely to be sent to a queue via a hash space under the hood.
+This type is very complex and is hard adding additional queues with bindings.
+
+### Virtual Hosts (V-Hosts)
+
+- Virtual hosts provide logical grouping and seperation of resources such as connections,exchanges,queues,bindings,user permissions, policies etc.
+- Virtual hosts can only act and operate on resources that are assigned to it.
+- Virtual hosts can only be created via the HTTP API or using the rabbitmqctl
+
+Examples of creating hosts:
+
+- rabbitmqctl add_vhost qa1
+curl -u userename:pa$sw0rD -X PUT `Host Name`
+
+> **_NOTE:_**  `Host Name` Will be the your rabbitmq hosted URL for example `http://rabbitmq.local:15672/api/vhosts/vh1`
+
+Virtual hosts have the following metadata that can be associated with them:
+- description (--description argument)
+- a Set of tags(--tags argument)
+- Default queue type configured for the virtual host(--default-queue-type argument)
+
+For more on Virtual Hosts see the following links:
+- <a href="(https://www.rabbitmq.com/vhosts.html)" target=_blank>RabbitMQ Docs</a>
+
 
 ## Patterns
 
+### Outbox Pattern
+#### Example Usage
+### Circuit Breaker Pattern
+#### Example Usage
+### Saga Pattern
+#### Example Usage
+
+## Streams
+
 ## Options
+
+### CLI Tool
+
+## Deploy on production K8S 
+
+For more inforamtion see [The K8S RabbitMQ docs](https://www.rabbitmq.com/kubernetes/operator/operator-overview.html)
