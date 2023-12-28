@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessRegistrationService.API", "BusinessRegistrationService.API\BusinessRegistrationService.API.csproj", "{B5A88D1C-4AEF-43D4-A853-1A8673510271}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessRegistrationService.Data", "BusinessRegistrationService.Data\BusinessRegistrationService.Data.csproj", "{BFBEFD29-0BD2-4484-A4EF-A406BFD59CF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5A88D1C-4AEF-43D4-A853-1A8673510271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A88D1C-4AEF-43D4-A853-1A8673510271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A88D1C-4AEF-43D4-A853-1A8673510271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A88D1C-4AEF-43D4-A853-1A8673510271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFBEFD29-0BD2-4484-A4EF-A406BFD59CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBEFD29-0BD2-4484-A4EF-A406BFD59CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBEFD29-0BD2-4484-A4EF-A406BFD59CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBEFD29-0BD2-4484-A4EF-A406BFD59CF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
