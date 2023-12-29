@@ -1,16 +1,22 @@
-## [Back to Main](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)
+## [Back to Exchange Page](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges)
 
 ## Direct Exchange
 
 ### Introduction
 
-The below example will be implemented using the MassTransit package for .NET. For more information see the [MassTransit Config page.]()
+Direct exchange is one of the exchanges that are built into RabbitMQ and is probably the simplest of them all. Use a direct exchange when the routing keys are known and you want to perform different tasks based on the routing key.
+
+The direct exchange will route the message to a queue whose binding key matches the routing key of the message exactly.One queue can have multiple bindings to the same exchange with different binding keys.
+
+### Example Notes
+
+The below example will be implemented using the MassTransit package for .NET. For more information see the [MassTransit Config page.](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/MassTransit.md)
 
 The [MassTransit Documentation](https://masstransit.io/documentation) will be referenced through out this document as well.
 
 Only the producers/consumers and messages are covered.
 
-Example code can be found [HERE](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Code_Examples/Direct_Exchange)
+Example code can be found [HERE](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Direct/Direct_Exchange)
 
 > **_NOTE:_**  Make sure you have a running instance of RabbitMQ. If you are using different login details update the username and password in AppSettings. See the [MassTransit Config page](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/MassTransit.md) for more information.
 
@@ -455,6 +461,6 @@ public static class Extensions
 - [MassTransit Documentation](https://masstransit.io/documentation/concepts)
 - [RabbitMQ Exchanges,routing keys and bindings](https://www.cloudamqp.com/blog/part4-rabbitmq-for-beginners-exchanges-routing-keys-bindings.html?gad_source=1&gclid=Cj0KCQiAj_CrBhD-ARIsAIiMxT968bAT2q7IKHeMLJ-ttUXsa1pdhW39c7F7FqpXv_eNtLlzP5NbtSoaAofYEALw_wcB)
 - [RabbitMQ Direct Excahnge Explained](https://www.cloudamqp.com/blog/rabbitmq-direct-exchange-explained.html)
-- [Example Code](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Code_Examples/Direct_Exchange)
+- [Example Code](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Direct/Direct_Exchange)
 
-## [Back to Main](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)
+## [Back to Exchange Page](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges)
