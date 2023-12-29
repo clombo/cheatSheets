@@ -8,7 +8,7 @@ The fanout exchange will route published messages to any queues bound to it with
 
 ### Example Notes
 
-The below example will be implemented using the MassTransit package for .NET. For more information see the [MassTransit Config page.]()
+The below example will be implemented using the MassTransit package for .NET. For more information see the [MassTransit Config page.](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/MassTransit.md)
 
 
 The [MassTransit Documentation](https://masstransit.io/documentation) will be referenced through out this document as well.
