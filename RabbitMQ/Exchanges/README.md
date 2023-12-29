@@ -61,13 +61,16 @@ There are four basic RabbitMQ exchange types in RabbitMQ, each of which uses dif
 - [Fanout Exchange](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Fanout)
 - [Headers Exchange](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Header)
 
-Additionally, there are 3 more types available to RabbitMQ:
+Additionally, there is 1 more types available to RabbitMQ:
+- The `Consistent Hashing Exchange` is available through a plugin you install and it not available as a default.
 
-- [Default/Alternate Exchange]()
-- [Dead Letter Exchange]()
-- [Consistent Hashing Exchange]()
+There is also some extensions to the Exchanges available on RabbitMQ namely:
 
-The [`Consistent Hashing Exchange`]() is available through a plugin you install and it not available as a default.
+- [Default/Alternate Exchange](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Alternate)
+- [Dead Letter Exchange](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Deadletter)
+
+These exchanges are not types on their own and instead uses one of the 4 default types of Exchanges available.
+
 
 For more information click on the exchange you are interested in.
 
