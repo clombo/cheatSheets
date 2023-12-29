@@ -24,6 +24,7 @@ Example code can be found [HERE](https://github.com/clombo/cheatSheets/tree/main
 > **_NOTE:_**  Make sure you have a running instance of RabbitMQ. If you are using different login details update the username and password in AppSettings. See the [MassTransit Config page](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/MassTransit.md) for more information.
 
 ### Characteristics
+//TODO
 
 #### Topic Exchange Diagram:
 
@@ -31,8 +32,81 @@ Example code can be found [HERE](https://github.com/clombo/cheatSheets/tree/main
 
 ### Example Implementation using MassTransit
 
+In the example new agreements, like a purchase agreement, can be created either for our store or main office. A agreement service is responsible for creating the agreement and notifying either the office or store service of the agreement.
+
+a 4th Service is a logging service that will log all incoming requests of agreements.
+
 #### Diagram of example implementation.
 ![Topic Exchange Example](https://github.com/clombo/cheatSheets/assets/11086072/8e66b9ed-926f-4426-a41f-b825befec699)
+
+### Message models/contracts
+//TODO
+
+### Services
+
+#### Agreement service
+
+#### `Producers`
+```cs
+//TODO
+```
+#### `Extensions.cs`
+```cs
+//TODO
+```
+#### `Controllers`
+```cs
+//TODO
+```
+#### `Test JSON`
+```json
+//TODO
+```
+
+#### Office service
+
+#### `Consumers`
+```cs
+//TODO
+```
+#### `Queues`
+```cs
+//TODO
+```
+#### `Extensions.cs`
+```cs
+//TODO
+```
+
+#### Store service
+
+#### `Consumers`
+```cs
+//TODO
+```
+#### `Queues`
+```cs
+//TODO
+```
+#### `Extensions.cs`
+```cs
+//TODO
+```
+
+#### Agreement Event Log service
+
+#### `Consumers`
+```cs
+//TODO
+```
+#### `Queues`
+```cs
+//TODO
+```
+#### `Extensions.cs`
+```cs
+//TODO
+```
 
 ### References
 - [MassTransit Documentation](https://masstransit.io/documentation/concepts)
