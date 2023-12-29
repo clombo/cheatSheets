@@ -1,12 +1,15 @@
-## [Back to Main](http://www.google.com)
+## [Back to Exchange Page](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges)
 
 ## Fanout Exchange
 
-### Introduction 
+### Introduction
+
+The fanout exchange will route published messages to any queues bound to it without any conditions and no balancing between the queues. You shouldn’t even specify a binding key, and, if you do, the exchange will just ignore it. Furthermore, there is no limit to how many queues you can bind to the exchange.
+
+### Example Notes
 
 The below example will be implemented using the MassTransit package for .NET. For more information see the [MassTransit Config page.]()
 
-[MassTransit Config page](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/MassTransit.md) for more information.
 
 The [MassTransit Documentation](https://masstransit.io/documentation) will be referenced through out this document as well.
 
@@ -14,7 +17,7 @@ Only the producers/consumers and messages are covered.
 
 Example code can be found [HERE](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Fanout/Fanout_Exchange)
 
-> **_NOTE:_**  Make sure you have a running instance of RabbitMQ. If you are using different login details update the username and password in AppSettings. See the 
+> **_NOTE:_**  Make sure you have a running instance of RabbitMQ. If you are using different login details update the username and password in AppSettings. See the [MassTransit Config page](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/MassTransit.md) for more information.
 
 ### Characteristics
 
@@ -284,46 +287,222 @@ Notes:
 ```
 Notes:
 - Depending on the paymentMethod on or the other payment details will be null. Example: When EFT is selected `cardDetails` object is null and the `bankingDetails` object is passed.
-- You can test the endpoint using swagger at `TODO`
+- You can test the endpoint using swagger at `https://localhost:7132/swagger`
 
 #### Notification service
 
 This service is a dummy service for a notification that will be sent to the client that submitted the order (doesn't sent actual emails or notifications)
 
-#### `Consumers comes here`
+#### `NotifyConsumer.cs`
 ```cs
-//TODO
+using Contracts;
+using MassTransit;
+
+namespace Bus.Consumers;
+
+public class NotifyConsumer : IConsumer<OrderDetailsRecord<CreditCardDetailsRecord>>, IConsumer<OrderDetailsRecord<BankingDetailsRecord>>
+{
+    public async Task Consume(ConsumeContext<OrderDetailsRecord<CreditCardDetailsRecord>> context)
+    {
+        Console.WriteLine($"Send email to {context.Message.ClientName}: Dear {context.Message.ClientName}, we have received your order and will be processed shortly.");
+    }
+
+    public async Task Consume(ConsumeContext<OrderDetailsRecord<BankingDetailsRecord>> context)
+    {
+        Console.WriteLine($"Send email to {context.Message.ClientName}: Dear {context.Message.ClientName}, we have received your order and will be processed shortly.");
+    }
+}
 ```
-#### `Queues comes here`
+Notes:
+- One consumer file was used but technically has 2 consumers present
+- Consumer for Credit Card payment
+- Consumer for EFT payment
+
+#### `NotificationQueue.cs`
 ```cs
-//TODO
+using MassTransit;
+using RabbitMQ.Client;
+
+namespace Bus.Queues;
+
+public static class NotificationQueue
+{
+    public static IRabbitMqBusFactoryConfigurator AddNotificationQueue(
+        this IRabbitMqBusFactoryConfigurator configurator, IBusRegistrationContext context)
+    {
+        configurator.ReceiveEndpoint("notification-queue", ce =>
+        {
+            ce.ConfigureConsumeTopology = false;
+            ce.ConcurrentMessageLimit = 10;
+            ce.ConfigureConsumers(context);
+            ce.Bind("OrderExchange", cb =>
+            {
+                cb.ExchangeType = ExchangeType.Fanout;
+            });
+        });
+        
+        return configurator;
+    }
+}
 ```
-#### `Extension.cs comes here`
+Note:
+- Only one "notification" queue is required and both consumers are registered to it.
+
+#### `Extension.cs`
 ```cs
-//TODO
+﻿using Bus.Consumers;
+using Bus.Queues;
+using MassTransit;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Bus;
+
+public static  class Extensions
+{
+    public static IServiceCollection AddBus(this IServiceCollection services, IConfiguration config)
+    {
+        
+        services.AddMassTransit(x =>
+            {
+                //Register Consumers
+                x.AddConsumer<NotifyConsumer>();
+                
+                x.UsingRabbitMq((ctx, cfg) =>
+                    {
+                        cfg.Host(
+                            config["RabbitMQ:HostAddress"], 
+                            //configuration["RabbitMQ:ConnectionName"], 
+                            c =>
+                            {
+                                c.Username(config["RabbitMQ:Username"]);
+                                c.Password(config["RabbitMQ:Password"]);
+                            }
+                        );
+
+                        //Queues / Receive Endpoints registration
+                        cfg.AddNotificationQueue(ctx);
+
+                    }
+                );
+            }
+        );
+        return services;
+    }
+}
 ```
 
 #### Payment service
 
 This is a dummy service to process the payment depending on the payment details that was sent
 
-#### `Consumers comes here`
+#### `ProcessCreditCardPaymentConsumer.cs`
 ```cs
-//TODO
+using Contracts;
+using MassTransit;
+
+namespace Bus.Consumers;
+
+public class ProcessCreditCardPaymentConsumer : IConsumer<OrderDetailsRecord<CreditCardDetailsRecord>>
+{
+
+    public async Task Consume(ConsumeContext<OrderDetailsRecord<CreditCardDetailsRecord>> context)
+    {
+        var paymentDetails = context.Message.PaymentDetails;
+        Console.WriteLine($"Processing Credit Card payment with a order total of {context.Message.OrderTotal}, payment details {paymentDetails}");
+    }
+}
 ```
+
+#### `ProcessEftPaymentConsumer.cs`
 ```cs
-//TODO
+using Contracts;
+using MassTransit;
+
+namespace Bus.Consumers;
+
+public class ProcessEftPaymentConsumer: IConsumer<OrderDetailsRecord<BankingDetailsRecord>>
+{
+    
+    public async Task Consume(ConsumeContext<OrderDetailsRecord<BankingDetailsRecord>> context)
+    {
+        var paymentDetails = context.Message.PaymentDetails;
+        Console.WriteLine($"Processing EFT payment with a total value of {context.Message.OrderTotal}, payment details {paymentDetails}");
+    }
+}
 ```
-#### `Queues comes here`
+#### `ProcessPaymentQueue.cs`
 ```cs
-//TODO
+﻿using Bus.Consumers;
+using MassTransit;
+using MassTransit.RabbitMqTransport.Configuration;
+using RabbitMQ.Client;
+
+namespace Bus.Queues;
+
+public static class ProcessPaymentQueue
+{
+    public static IRabbitMqBusFactoryConfigurator AddProcessPaymentQueue(this IRabbitMqBusFactoryConfigurator  configurator,
+        IBusRegistrationContext context)
+    {
+        configurator.ReceiveEndpoint("payment-queue", ce =>
+        {
+            ce.ConfigureConsumeTopology = false;
+            ce.ConcurrentMessageLimit = 10;
+            ce.ConfigureConsumers(context);
+            ce.Bind("OrderExchange", cb =>
+            {
+                cb.ExchangeType = ExchangeType.Fanout;
+            });
+        });
+        
+        return configurator;
+    }
+}
 ```
+
+#### `Extension.cs`
 ```cs
-//TODO
-```
-#### `Extension.cs comes here`
-```cs
-//TODO
+﻿using Bus.Consumers;
+using Bus.Queues;
+using MassTransit;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Bus;
+
+public static class Extensions
+{
+    public static IServiceCollection AddBus(this IServiceCollection services, IConfiguration config)
+    {
+        
+        services.AddMassTransit(x =>
+            {
+                //Register Consumers
+                x.AddConsumer<ProcessEftPaymentConsumer>();
+                x.AddConsumer<ProcessCreditCardPaymentConsumer>();
+                
+                x.UsingRabbitMq((ctx, cfg) =>
+                    {
+                        cfg.Host(
+                            config["RabbitMQ:HostAddress"], 
+                            //configuration["RabbitMQ:ConnectionName"], 
+                            c =>
+                            {
+                                c.Username(config["RabbitMQ:Username"]);
+                                c.Password(config["RabbitMQ:Password"]);
+                            }
+                        );
+                        
+                        //Queues/Receive endpoints
+                        cfg.AddProcessPaymentQueue(ctx);
+                    }
+                );
+            }
+        );
+        return services;
+    }
+}
 ```
 
 ### References
@@ -332,5 +511,5 @@ This is a dummy service to process the payment depending on the payment details 
 - [RabbitMQ Fanout Excahnge Explained](https://www.cloudamqp.com/blog/rabbitmq-fanout-exchange-explained.html)
 - [Example Code](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges/Fanout/Fanout_Exchange)
 
-## [Back to Main](https://github.com/clombo/cheatSheets/blob/main/RabbitMQ/Main.md)
+## [Back to Exchange Page](https://github.com/clombo/cheatSheets/tree/main/RabbitMQ/Exchanges)
 
