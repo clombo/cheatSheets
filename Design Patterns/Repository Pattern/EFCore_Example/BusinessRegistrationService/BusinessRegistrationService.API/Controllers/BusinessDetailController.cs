@@ -1,6 +1,7 @@
 using AutoMapper;
 using BusinessRegistrationService.API.Models;
 using BusinessRegistrationService.API.Models.Types;
+using BusinessRegistrationService.Data.Entities;
 using BusinessRegistrationService.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,9 +21,22 @@ public class BusinessDetailController: ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateNewBusinessDetailRecord() //Add frombody
+    public async Task<IActionResult> CreateNewBusinessDetailRecord([FromBody] CreateBusinessDetailRecordRequest request)
     {
+        var newRecord = _mapper.Map<BusinessDetailEntity>(request);
         
+        newRecord.AccountDetails.Select(s =>
+        {
+            s.BusinessDetailId = newRecord.Id;
+            return s;
+        }).ToList();
+        
+        newRecord.BankAccountId = newRecord.BankAccount.Id;
+        
+        await _unitOfWork.BusinessDetailRepository.AddAsync(newRecord);
+        await _unitOfWork.CompleteAsync();
+        
+        return Ok(newRecord.Id);
     }
 
     [HttpGet]
@@ -45,9 +59,16 @@ public class BusinessDetailController: ControllerBase
         }
     }
 
-    [HttpPut]
-    public async Task<IActionResult> UpdateBusinessDetailRecord() //Add frombody
+    [HttpPut( "{id}")]
+
+    public async Task<IActionResult> UpdateBusinessDetailRecord([FromBody] UpdateBusinessDetailRecordRequest request, Guid id, CancellationToken cancellationToken) //Add frombody
     {
+        var recordToUpdate = await _unitOfWork.BusinessDetailRepository.Query(id, cancellationToken);
         
+        _mapper.Map(request, recordToUpdate);
+        _unitOfWork.BusinessDetailRepository.Update(recordToUpdate);
+        await _unitOfWork.CompleteAsync();
+
+        return Ok(recordToUpdate.Id);
     } 
 }
