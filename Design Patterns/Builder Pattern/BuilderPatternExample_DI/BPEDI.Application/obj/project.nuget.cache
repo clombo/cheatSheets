@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "hdCbbX4Shz977k1U5JjGGIQKaPXKHv40iqqEmfkcaSdUAjt1XD0QZEABmuBBxuqqPnIecAAp1ozKujBELI1RHA==",
+  "success": true,
+  "projectFilePath": "E:\\code\\cheatSheets\\Design Patterns\\Builder Pattern\\BuilderPatternExample_DI\\BPEDI.Application\\BPEDI.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Christo\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\Christo\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
+    "C:\\Users\\Christo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Christo\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Christo\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Christo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
